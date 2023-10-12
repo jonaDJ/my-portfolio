@@ -1,0 +1,29 @@
+$font-sizes: (
+  mobile: (
+    h1: 28px,
+    h2: 24px,
+    h3: 20px,
+    body: 16px,
+    subtext: 14px,
+    link: 16px,
+    button: 16px,
+  ),
+  tablet: (
+    h1: 32px,
+    h2: 28px,
+    h3: 24px,
+    body: 18px,
+    subtext: 16px,
+    link: 16px,
+    button: 18px,
+  ),
+  desktop: (
+    h1: 36px,
+    h2: 32px,
+    h3: 28px,
+    body: 20px,
+    subtext: 18px,
+    link: 16px,
+    button: 20px,
+  ),
+);
