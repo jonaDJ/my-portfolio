@@ -1,0 +1,48 @@
+@import "../../assets/styles/color";
+.app-header {
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: $deep-teal;
+}
+
+.header-frame {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  display: flex;
+  width: 82px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: stretch;
+  color: $pale-linen;
+  font-family: Marko One;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.navbar,
+.icon-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 5px;
+}
+
+.navbar a,
+.icon-links a {
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  color: $pale-linen;
+  text-decoration: none;
+  font-weight: bold;
+}

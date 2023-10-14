@@ -1,0 +1,26 @@
+@import "../../assets/styles/mixins";
+
+.wrapper {
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: inherit;
+  max-width: 1200px;
+  padding: 0 4rem;
+
+  @include breakpoint-mobile {
+    padding: 0 1rem;
+    max-width: 100%;
+  }
+
+  @include breakpoint-tablet {
+    max-width: 750px;
+    padding: 0 2rem;
+  }
+
+  @include breakpoint-laptop {
+    max-width: 970px;
+    padding: 0 3rem;
+  }
+}
