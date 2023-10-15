@@ -40,15 +40,6 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
           <div className={`outerNav ${isOpenNav ? "outer-nav-open" : ""}`}>
             <div className="navbar">
               <div className="icon-links">
-                <a href="https://github.com">
-                  <img src={git} alt="git" />
-                </a>
-                <a href="https://linkedin.com">
-                  <img src={linkedIn} alt="linkedIn" />
-                </a>
-                <a href="mailto:your-email@example.com">
-                  <img src={email} alt="email" />
-                </a>
                 {isMobile && (
                   <button onClick={menuClickHandler} className="burger-button">
                     <div
@@ -62,6 +53,15 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
                     ></div>
                   </button>
                 )}
+                <a href="https://github.com">
+                  <img src={git} alt="git" />
+                </a>
+                <a href="https://linkedin.com">
+                  <img src={linkedIn} alt="linkedIn" />
+                </a>
+                <a href="mailto:your-email@example.com">
+                  <img src={email} alt="email" />
+                </a>
               </div>
             </div>
             {(isOpenNav || !isMobile) && (

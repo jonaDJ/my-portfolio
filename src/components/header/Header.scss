@@ -2,11 +2,11 @@
 @import "../../assets/styles/mixins";
 
 .app-header {
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  position: sticky;
+  top: 0;
+  // left: 0;
+  z-index: 100;
   width: 100%;
-  //   position: fixed;
   background: $deep-teal;
 
   &.nav-open {
@@ -27,12 +27,12 @@
     .sideNavBar {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       position: absolute;
       left: 0;
       width: 100%;
+      padding-left: 2rem;
       background: $deep-teal;
-      padding: 10px;
 
       a {
         color: $pale-linen;
@@ -83,21 +83,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row-reverse;
 }
 
 .name {
   display: flex;
-  width: 100px;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   flex-shrink: 0;
   align-self: stretch;
   color: $pale-linen;
-  font-family: Marko One;
-  font-size: 40px;
+  font-family: cursive;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding: 10px 0;
 }
 
 .outerNav {
@@ -113,7 +114,7 @@
 .navbar,
 .icon-links {
   display: flex;
-  padding: 10px;
+  padding: 8px 0;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
@@ -144,6 +145,26 @@
 
 @include breakpoint-mobile {
   .name {
-    font-size: 34px;
+    font-size: 24px;
+  }
+}
+
+@include breakpoint-mobile {
+  .app-header.nav-open .sideNavBar {
+    padding-left: 1rem;
+  }
+}
+
+@include breakpoint-tablet {
+  .app-header.nav-open .sideNavBar {
+    max-width: 750px;
+    padding-left: 2rem;
+  }
+}
+
+@include breakpoint-laptop {
+  .app-header.nav-open .sideNavBar {
+    max-width: 970px;
+    padding-left: 3rem;
   }
 }
