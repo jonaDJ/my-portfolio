@@ -1,0 +1,121 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/color";
+@import "../../../../assets/styles/fonts";
+
+.about-me-main {
+  padding: 41px 0;
+  background-color: $deep-teal;
+}
+
+.about-me-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.about-me-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-me-avatar {
+  width: 324px;
+  height: 320px;
+  border-radius: 324px;
+  object-fit: cover;
+}
+
+.my-role {
+  color: #fff;
+  text-align: center;
+  font-family: "Source Serif Pro";
+
+  font-size: map-get(map-get($font-sizes, desktop), h2);
+  font-weight: 400;
+  line-height: normal;
+  width: 429px;
+}
+
+.about-me-desc {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+}
+
+.about-me-desc p {
+  color: #fff;
+  font-family: "Source Serif Pro";
+  font-size: map-get(map-get($font-sizes, desktop), body);
+  line-height: 1.5rem;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+@include breakpoint-tablet {
+  .about-me-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .about-me-header {
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .about-me-avatar {
+    width: 216px;
+    height: 212px;
+  }
+
+  .my-role {
+    font-size: map-get(map-get($font-sizes, tablet), h2);
+    width: auto;
+  }
+
+  .about-me-desc p {
+    font-size: map-get(map-get($font-sizes, tablet), body);
+    line-height: normal;
+  }
+}
+
+@include breakpoint-mobile {
+  .about-me-main {
+    padding: 10px 0;
+  }
+
+  .about-me-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .about-me-header {
+    flex-direction: row;
+    width: auto;
+    gap: 2px;
+  }
+
+  .about-me-avatar {
+    width: 177px;
+    height: 163px;
+  }
+
+  .about-me-desc p {
+    font-size: map-get(map-get($font-sizes, mobile), body);
+    line-height: normal;
+  }
+
+  .my-role {
+    width: auto;
+    font-size: map-get(map-get($font-sizes, mobile), h2);
+  }
+}
