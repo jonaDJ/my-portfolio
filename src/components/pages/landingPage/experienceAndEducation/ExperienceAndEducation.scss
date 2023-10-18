@@ -1,0 +1,149 @@
+@import "../../../../assets/styles/color";
+@import "../../../../assets/styles/mixins";
+
+.ee-container {
+  margin: 50px 0;
+}
+
+.ee-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+}
+
+.ee-titles {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.ee-title {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 2px;
+  background: $steel-blue;
+  flex-shrink: 0;
+  color: $pale-linen;
+  font-family: "Source Serif Pro";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ee-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.ee-entry-outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  &.education {
+    align-items: flex-end;
+  }
+}
+
+.ee-entry-inner {
+  display: flex;
+  flex: 1;
+  width: 50%;
+  padding: 10px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.ee-job-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ee-job-title {
+  color: #000;
+  font-family: Source Serif Pro;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+}
+
+.ee-job-details {
+  color: #000;
+  font-family: Source Serif Pro;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.ee-description {
+  color: var(--midnight-black, #0f171a);
+  font-family: Source Serif Pro;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+}
+
+.ee-title-seperate {
+  display: none;
+}
+
+@include breakpoint-tablet {
+  .ee-container {
+    margin: 2rem 0;
+  }
+}
+
+@include breakpoint-mobile {
+  .ee-container {
+    margin: 1rem 0;
+  }
+  .ee-entry-inner {
+    width: auto;
+  }
+  .ee-entry-outer {
+    &.experience {
+      order: -1;
+    }
+
+    &.education {
+      order: 1;
+    }
+  }
+
+  .ee-title-mobile {
+    display: none;
+  }
+
+  .ee-entry-outer {
+    padding: 10px;
+    border-top: 1px solid #000;
+  }
+  .ee-section {
+    gap: 0;
+  }
+
+  .ee-title-seperate {
+    display: flex;
+  }
+  .ee-details {
+    gap: 0;
+  }
+}
