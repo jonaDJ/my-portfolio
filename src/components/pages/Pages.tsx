@@ -1,12 +1,10 @@
 import React from "react";
-import AboutSec from "./landingPage/aboutSection/AboutSec";
-import ExperienceEducation from "./landingPage/experienceAndEducation/ExperienceAndEducation";
+import LandingPage from "./landingPage/LandingPage";
 
 const Pages: React.FC = () => {
   return (
     <main>
-      <AboutSec />
-      <ExperienceEducation />
+      <LandingPage />
     </main>
   );
 };

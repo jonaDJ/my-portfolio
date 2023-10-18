@@ -1,0 +1,66 @@
+{
+  "items": [
+    {
+      "category": "Frontend",
+      "skills": [
+        "ReactJS",
+        "TypeScript",
+        "JavaScript",
+        "Angular",
+        "HTML5",
+        "ES6+",
+        "RxJS",
+        "DOM",
+        "Virtual DOM",
+        "CSS3",
+        "SASS",
+        "LESS",
+        "Bootstrap",
+        "jQuery",
+        "Redux",
+        "Functional Programming",
+        "Arrow Functions",
+        "Ajax",
+        "JSON",
+        "Web Applications",
+        "Promises",
+        "Async-Await",
+        "a11y",
+        "Babel",
+        "Webpack bundle",
+        "npm",
+        "SEO"
+      ]
+    },
+    {
+      "category": "NodeJS",
+      "skills": ["NodeJS", "Python", "SQL"]
+    },
+    {
+      "category": "Others",
+      "skills": [
+        "WCAG 2.1",
+        "UX/UI",
+        "FIGMA prototyping",
+        "Jest",
+        "Jenkins",
+        "Mockups",
+        "AWS",
+        "CI/CD",
+        "GitHub",
+        "Agile methodology",
+        "Code-review",
+        "On-call",
+        "IntelliJ",
+        "Visual Studio Code",
+        "Babel",
+        "Firebase",
+        "Webpack bundle",
+        "npm",
+        "Unit testing",
+        "Integration test",
+        "Postman"
+      ]
+    }
+  ]
+}

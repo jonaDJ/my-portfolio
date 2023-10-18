@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
   }, [isMobile]);
 
   return (
-    <div className={`app-header ${isOpenNav ? "nav-open" : ""}`}>
+    <header className={`app-header ${isOpenNav ? "nav-open" : ""}`}>
       <WrapperComponent>
         <div className="header-frame">
           <div className="name">{name}</div>
@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
           </div>
         </div>
       </WrapperComponent>
-    </div>
+    </header>
   );
 };
 

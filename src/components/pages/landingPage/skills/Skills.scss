@@ -1,0 +1,118 @@
+@import "../../../../assets/styles/color";
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/fonts";
+
+.skills-section {
+  background-color: $deep-teal;
+  padding: 5rem 0;
+}
+
+.skills-container {
+  display: flex;
+  //   width: 891px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 21px;
+}
+
+.skills-header {
+  font-size: map-get(map-get($font-sizes, desktop), h2);
+  color: $pale-linen;
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.skills-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 27px;
+}
+.skill-category {
+  border-radius: 5px;
+  padding: 30px 6px;
+  background: $pale-linen;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  justify-items: start;
+}
+
+.skill-category-header {
+  font-size: map-get(map-get($font-sizes, desktop), h3);
+  height: 33px;
+  color: #000;
+  border-bottom: 1px solid;
+  width: 100%;
+  font-family: "Source Serif Pro";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+.skill-category-items {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 17px 19px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-item {
+  font-size: map-get(map-get($font-sizes, desktop), subtext);
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  background: $deep-teal;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: $pale-linen;
+}
+
+@include breakpoint-tablet {
+  .skills-header {
+    font-size: map-get(map-get($font-sizes, tablet), h2);
+  }
+
+  .skill-category-header {
+    font-size: map-get(map-get($font-sizes, tablet), h3);
+  }
+  .skill-item {
+    font-size: map-get(map-get($font-sizes, tablet), subtext);
+  }
+}
+
+@include breakpoint-mobile {
+  .skills-header {
+    font-size: map-get(map-get($font-sizes, mobile), h2);
+  }
+
+  .skills-content {
+    width: auto;
+  }
+
+  .skill-category {
+    padding: 15px 6px;
+  }
+
+  .skill-category-header {
+    text-align: center;
+    width: 100%;
+    font-size: map-get(map-get($font-sizes, mobile), h3);
+  }
+  .skill-item {
+    font-size: map-get(map-get($font-sizes, mobile), subtext);
+  }
+}
