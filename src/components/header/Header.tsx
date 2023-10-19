@@ -4,6 +4,7 @@ import git from "../../assets/icon/git-icon.svg";
 import linkedIn from "../../assets/icon/linkedIn-icon.svg";
 import email from "../../assets/icon/email-icon.svg";
 import WrapperComponent from "../wrapperComponent/WrapperComponent";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
   name: string;
@@ -66,9 +67,9 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
             </div>
             {(isOpenNav || !isMobile) && (
               <div className={`sideNavBar ${!isMobile ? "bigger" : ""}`}>
-                <a href="/">about</a>
-                <a href="/Project">Project</a>
-                <a href="/contact">Contact me</a>
+                <Link to="/">about</Link>
+                <Link to="/Project">Project</Link>
+                <Link to="/Contact">Contact me</Link>
               </div>
             )}
           </div>
