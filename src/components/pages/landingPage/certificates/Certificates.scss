@@ -3,8 +3,9 @@
 @import "../../../../assets/styles/fonts";
 
 .certificates-section {
+  border-top: 1px solid $pale-linen;
   background-color: $deep-teal;
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 
 .certificates-container {
@@ -20,95 +21,101 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  font-size: map-get(map-get($font-sizes, desktop), h2);
 }
 
 .certificates-all-cards {
-  flex: 1 1;
-  justify-content: space-around;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 15px;
   background-color: $pale-linen;
   padding: 15px;
+  border-radius: 8px;
 }
 
 .certificates-card {
-  display: flex;
-  padding: 4px 20px;
-  justify-content: center;
+  display: inline-flex;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 41px;
   border-radius: 8px;
-  background: $deep-teal;
+  background-color: $deep-teal;
+  transition: background-color 0.6s;
 }
 
+.certificates-card:hover {
+  background-color: $pale-linen;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.certificates-card:hover h3 {
+  color: $midnight-black;
+}
 .certificates-card img {
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
+  width: 80px;
+  height: 80px;
 }
 .certificates-card h3 {
-  width: 125px;
-  height: 75px;
-  color: $pale-linen;
-  font-family: Source Serif Pro;
-
   font-size: map-get(map-get($font-sizes, desktop), body);
+  color: $pale-linen;
+  text-align: center;
+  font-family: "Source Serif Pro";
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding: 10px;
 }
 
 @include breakpoint-tablet {
+  .certificates-section {
+    padding: 3rem 0;
+  }
   .certificates-all-cards {
-    justify-content: space-around;
+    grid-template-columns: auto auto auto;
   }
-
   .certificates-card {
-    display: flex;
-    padding: 11px 15px;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .certificates-card img {
-    width: 75px;
-    height: 75px;
+    padding: 5px;
   }
   .certificates-card h3 {
     font-size: map-get(map-get($font-sizes, tablet), body);
-    height: 66px;
-    text-align: center;
+  }
+
+  .certificates-card img {
+    width: 60px;
+    height: 60px;
   }
 }
 
 @include breakpoint-mobile {
+  .certificates-section {
+    padding: 1rem 0;
+  }
   .certificates-all-cards {
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+  }
+  .certificates-card {
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
   }
 
-  .certificates-card {
-    width: 100%;
-    display: flex;
-    padding: 11px 15px;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 5px;
-    flex-direction: row;
-    padding: 5px;
+  .certificates-card h3 {
+    font-size: map-get(map-get($font-sizes, mobile), body);
   }
 
   .certificates-card img {
-    width: 75px;
-    height: 75px;
+    width: 40px;
+    height: 40px;
   }
-  .certificates-card h3 {
-    font-size: map-get(map-get($font-sizes, mobile), body);
-    width: auto;
-    height: auto;
-    text-align: center;
+}
+
+@media screen and (max-width: 220px) {
+  .certificates-card {
+    flex-direction: column;
+    width: 100%;
   }
 }
