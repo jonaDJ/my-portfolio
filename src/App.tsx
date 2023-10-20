@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Pages from "./components/pages/Pages";
+import LandingPage from "./components/pages/landingPage/LandingPage";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Pages />,
+        element: <LandingPage />,
       },
       {
         path: "/Project",

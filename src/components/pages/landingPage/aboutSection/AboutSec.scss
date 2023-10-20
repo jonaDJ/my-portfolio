@@ -123,3 +123,9 @@
     font-size: map-get(map-get($font-sizes, mobile), h2);
   }
 }
+
+@media screen and (max-width: 320px) {
+  .about-me-header {
+    flex-direction: column;
+  }
+}

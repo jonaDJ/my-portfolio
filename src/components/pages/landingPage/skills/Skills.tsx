@@ -14,11 +14,11 @@ const Skills: React.FC = () => {
                 <h3 className="skill-category-header">
                   {categoryData.category}
                 </h3>
-                <div className="skill-category-items">
+                <ul className="skill-category-items">
                   {categoryData.skills.map((skill) => (
-                    <div className="skill-item">{skill}</div>
+                    <li className="skill-item">{skill}</li>
                   ))}
-                </div>
+                </ul>
               </div>
             ))}
           </div>

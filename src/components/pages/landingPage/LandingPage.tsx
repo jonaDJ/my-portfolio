@@ -1,5 +1,6 @@
 import AboutSec from "../landingPage/aboutSection/AboutSec";
 import ExperienceEducation from "../landingPage/experienceAndEducation/ExperienceAndEducation";
+import Certificates from "./certificates/Certificates";
 import Skills from "./skills/Skills";
 const LandingPage: React.FC = () => {
   return (
@@ -7,6 +8,7 @@ const LandingPage: React.FC = () => {
       <AboutSec />
       <ExperienceEducation />
       <Skills />
+      <Certificates />
     </div>
   );
 };
