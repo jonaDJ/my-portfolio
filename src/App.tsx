@@ -4,6 +4,7 @@ import LandingPage from "./components/pages/landingPage/LandingPage";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
+import ProjectPage from "./components/pages/projects/ProjectPage";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,9 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Header name="Jon" />
-        <Outlet />
+        <main>
+          <Outlet />
+        </main>
         <Footer />
       </div>
     ),
@@ -22,12 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/Project",
-        element: (
-          <div style={{ textAlign: "center", padding: 100 }}>
-            <h2>The Project page is still</h2>
-            <h1 style={{ color: "red" }}>UNDER CONSTRUCTION</h1>
-          </div>
-        ),
+        element: <ProjectPage />,
       },
       {
         path: "/Contact",

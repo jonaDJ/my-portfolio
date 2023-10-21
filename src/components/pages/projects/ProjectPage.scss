@@ -1,0 +1,187 @@
+@import "../../../assets/styles/color";
+@import "../../../assets/styles/fonts";
+@import "../../../assets/styles/mixins";
+
+.project-all-cards {
+  display: flex;
+  padding: 20px 22px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 51px;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  display: flex;
+  padding-bottom: 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-smoke;
+  padding-bottom: 5px;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+.project-card img {
+  width: 284px;
+  height: 198px;
+  object-fit: cover;
+}
+
+.project-card-header {
+  display: flex;
+  padding: 0px 21px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-card-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  hr {
+    width: 165px;
+  }
+}
+
+.project-card-title-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+
+  h3 {
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 24px;
+    font-size: map-get(map-get($font-sizes, desktop), h3);
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  p {
+    text-align: center;
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: map-get(map-get($font-sizes, desktop), subtext);
+
+    font-weight: 400;
+    font-style: italic;
+  }
+}
+
+.project-card-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 27px;
+
+  p {
+    color: $midnight-black;
+    text-align: center;
+    font-family: Crimson Text;
+
+    font-size: map-get(map-get($font-sizes, desktop), subtext);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 182px;
+    text-transform: capitalize;
+    min-height: 7 * 1.2em;
+  }
+
+  button {
+    padding: 5px;
+    color: black;
+    font-family: Inter;
+    font-size: map-get(map-get($font-sizes, desktop), body);
+    font-weight: 400;
+  }
+}
+
+@include breakpoint-tablet {
+  .project-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding-bottom: 0;
+    padding: 10px;
+  }
+
+  .project-card img {
+    width: auto;
+    max-width: 360px;
+  }
+
+  .project-card-title-header {
+    h3 {
+      font-size: map-get(map-get($font-sizes, tablet), h3);
+    }
+    p {
+      font-size: map-get(map-get($font-sizes, tablet), subtext);
+    }
+  }
+  .project-card-desc {
+    p {
+      width: auto;
+      min-height: 4 * 1.2em;
+      font-size: map-get(map-get($font-sizes, tablet), subtext);
+    }
+    button {
+      font-size: map-get(map-get($font-sizes, tablet), body);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .project-all-cards {
+    gap: 15px;
+  }
+  .project-card {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+
+  .project-card-header {
+    flex-direction: row;
+    padding-top: 10px;
+  }
+
+  .project-card img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+  }
+
+  .project-card-title-container {
+    flex-direction: row;
+    hr {
+      transform: rotate(90deg);
+      width: 45px;
+    }
+  }
+
+  .project-card-title-header {
+    h3 {
+      font-size: map-get(map-get($font-sizes, mobile), h3);
+    }
+    p {
+      text-align: left;
+      font-size: map-get(map-get($font-sizes, mobile), subtext);
+    }
+  }
+
+  .project-card-desc {
+    p {
+      width: auto;
+      font-size: map-get(map-get($font-sizes, mobile), subtext);
+    }
+    button {
+      font-size: map-get(map-get($font-sizes, mobile), body);
+    }
+  }
+}

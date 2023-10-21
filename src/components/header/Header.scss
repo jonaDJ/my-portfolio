@@ -27,7 +27,8 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      position: absolute;
+      position: fixed;
+      // position: absolute;
       left: 0;
       width: 100%;
       padding-left: 2rem;
@@ -157,7 +158,7 @@
 @include breakpoint-tablet {
   .app-header.nav-open .sideNavBar {
     max-width: 750px;
-    padding-left: 2rem;
+    // padding-left: 2rem;
   }
 }
 
