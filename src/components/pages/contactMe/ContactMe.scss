@@ -1,0 +1,81 @@
+@import "../../../assets/styles/color";
+.contact-page {
+  background-color: black;
+  color: $pale-linen;
+}
+
+.contact-container {
+  font-family: "Anonymous Pro", monospace;
+  display: flex;
+}
+.contact-about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  p {
+    font-size: 16px;
+  }
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 19px;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    img {
+      padding: 2px;
+    }
+
+    h4 {
+      font-weight: normal;
+      font-size: 16px;
+    }
+  }
+}
+.contact-resume {
+  display: flex;
+  padding: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  background-color: $deep-teal;
+
+  &:hover {
+    background-color: $steel-blue;
+  }
+
+  h4 {
+    color: $pale-linen;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.contact-form {
+  flex: 1;
+}
