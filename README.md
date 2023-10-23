@@ -1,46 +1,93 @@
 # Under Development
-# Getting Started with Create React App + TypeScript
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Portfolio
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+This repository contains the source code for Jonathan Darla's portfolio website. The website is built using React, TypeScript, and SCSS to showcase Jonathan's professional experience, skills, and projects.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Technologies:**
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
-### `npm test`
+## Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. [Home](#home)
+    - [About](#about)
+    - [Education and Experience](#education-and-experience)
+    - [Skills and Certifications](#skills-and-certifications)
+2. [Projects](#projects)
+    - [Overview](#projects-overview)
+    - [Individual Project Pages](#individual-project-pages)
+3. [Contact](#contact)
+    - [Contact Information](#contact-information)
+    - [Contact Form](#contact-form)
+4. [Images](#images)
+    - [Gallery](#gallery)
+5. [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Local Development](#local-development)
 
-### `npm run build`
+## Home
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### About
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A brief introduction about Jonathan Darla, highlighting key strengths and achievements.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Education and Experience
 
-### `npm run eject`
+Jonathan's educational background and work experience, presented in a timeline or sections, showcasing each role with responsibilities and achievements.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Skills and Certifications
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A list of technical skills and certifications, visually appealing with icons or badges for certifications.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Projects
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Projects Overview
 
-## Learn More
+A list of key projects Jonathan has worked on, including project names, descriptions, and technologies used.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Individual Project Pages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Separate pages or modals for each project, providing in-depth details with code snippets, project screenshots, and links to live demos or GitHub repositories.
+
+## Contact
+
+### Contact Information
+
+Jonathan's contact details, including email, phone, and location.
+
+### Contact Form
+
+An optional contact form for users to reach out directly from the webpage.
+
+## Images
+
+### Gallery
+
+A dedicated page for images, showcasing relevant images such as project screenshots, event photos, or personal achievements.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/your-portfolio.git
+    cd your-portfolio
+
+
+
+ 
+
+
