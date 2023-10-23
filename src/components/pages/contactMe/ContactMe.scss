@@ -1,11 +1,22 @@
 @import "../../../assets/styles/color";
+@import "../../../assets/styles/mixins";
+
 .contact-page {
-  background-color: black;
-  color: $pale-linen;
+  //   background-color: black;
+  //   color: $pale-linen;
+  padding: 5rem 0;
 }
 
-.contact-container {
+.contact-page-section {
   font-family: "Anonymous Pro", monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.contact-page-title {
+  text-align: center;
+}
+.contact-container {
   display: flex;
 }
 .contact-about-me {
@@ -41,6 +52,7 @@
 
     img {
       padding: 2px;
+      background-color: black;
     }
 
     h4 {
@@ -56,6 +68,7 @@
   align-items: center;
   gap: 15px;
   background-color: $deep-teal;
+  cursor: pointer;
 
   &:hover {
     background-color: $steel-blue;
@@ -68,6 +81,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    font-family: "Anonymous Pro", monospace;
   }
 
   img {
@@ -78,4 +92,115 @@
 
 .contact-form {
   flex: 1;
+  border: 1px solid;
+  padding: 20px 0;
+
+  width: 100%;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+  }
+}
+
+.contact-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.contact-input-name,
+.contact-input-email,
+.contact-input-msg {
+  display: flex;
+  padding: 0px 10px;
+  align-items: flex-start;
+  gap: 56px;
+
+  .contact-input {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    label {
+      font-size: 18px;
+    }
+
+    input,
+    textarea {
+      border: 1px solid black;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      background-color: inherit;
+    }
+
+    textarea {
+      border: 1px solid black;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      background-color: inherit;
+      width: 100%;
+    }
+  }
+}
+
+.contact-input-msg {
+  width: 100%;
+
+  .contact-input {
+    width: 100%;
+  }
+}
+
+.contact-submit-btn {
+  text-align: center;
+  padding: 10px;
+  width: 60%;
+  background-color: $deep-teal;
+  color: $pale-linen;
+  font-size: 16px;
+  font-family: "Anonymous Pro", monospace;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $steel-blue;
+  }
+}
+
+@include breakpoint-tablet {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contact-form,
+  .contact-about-me {
+    max-width: 455px;
+  }
+}
+
+@include breakpoint-mobile {
+  .contact-input-wrapper {
+    width: 100%;
+  }
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-form,
+  .contact-about-me {
+    max-width: 455px;
+  }
+  .contact-input-name,
+  .contact-input-email {
+    flex-direction: column;
+  }
 }

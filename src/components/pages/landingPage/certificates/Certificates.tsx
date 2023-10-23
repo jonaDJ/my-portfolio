@@ -51,7 +51,7 @@ const Certificates: React.FC = () => {
           <h2 className="certificates-header">Certificates</h2>
           <ul className="certificates-all-cards">
             {certificatesData.map((data) => (
-              <li className="certificates-card">
+              <li key={data.id} className="certificates-card">
                 <img src={data.img} alt="card-img" />
                 <h3>{data.title}</h3>
               </li>

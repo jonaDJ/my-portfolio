@@ -11,3 +11,21 @@ li {
   margin: 0;
   padding: 0;
 }
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  .app-header {
+    flex: 0 1 auto;
+  }
+
+  .main {
+    flex: 1 1 auto;
+  }
+}

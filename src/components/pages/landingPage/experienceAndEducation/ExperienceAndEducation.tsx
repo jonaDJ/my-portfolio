@@ -6,7 +6,7 @@ const ExperienceEducation: React.FC = () => {
   const combinedExperienceAndEducationData = {
     items: [
       {
-        id: 1,
+        id: "ee-1",
         type: "experience",
         title: "Frontend Engineer",
         dates: "2009-present",
@@ -15,7 +15,7 @@ const ExperienceEducation: React.FC = () => {
           "Experienced frontend engineer specializing in web development, with a focus on enhancing accessibility and web performance. Passionate about delivering seamless user experiences and driving growth through cutting-edge technologies and innovative solutions.",
       },
       {
-        id: 2,
+        id: "ee-2",
         type: "experience",
         title: "SDE 1",
         dates: "2022-2023",
@@ -24,7 +24,7 @@ const ExperienceEducation: React.FC = () => {
           "Dedicated Software Development Engineer (SDEU) at AWS Amazon, with a focus on customer-centric features and optimizing the AWS Athena serverless query system. Committed to quality, performance, and security, while actively participating in feature projects and delivering results on time.",
       },
       {
-        id: 3,
+        id: "ee-3",
         type: "experience",
         title: "Software Engineer Intern",
         dates: "2021-2022",
@@ -34,7 +34,7 @@ const ExperienceEducation: React.FC = () => {
       },
 
       {
-        id: 4,
+        id: "ee-4",
         type: "education",
         degree: "Master of Science in Computer Science",
         dates: "2021-2022",
@@ -43,7 +43,7 @@ const ExperienceEducation: React.FC = () => {
           "Studied and delved deep into computer science, successfully completing ten subjects, and acquiring a wealth of knowledge in the field. GPA: 3.5/4",
       },
       {
-        id: 5,
+        id: "ee-5",
         type: "experience",
         title: "Software Engineer",
         location: "India",
@@ -51,7 +51,7 @@ const ExperienceEducation: React.FC = () => {
           "Experienced professional with a focus on developing and optimizing frontend components for single-page applications, enhancing user interactions and experiences. Proficient in improving application responsiveness and enabling dynamic user interface customization based on i",
       },
       {
-        id: 6,
+        id: "ee-6",
         type: "education",
         degree: "Bachelor in Computer Science",
         dates: "2015-2019",
@@ -72,7 +72,7 @@ const ExperienceEducation: React.FC = () => {
           </div>
           <div className="ee-details">
             {combinedExperienceAndEducationData.items.map((item) => (
-              <div className={`ee-entry-outer ${item.type}`}>
+              <div key={item.id} className={`ee-entry-outer ${item.type}`}>
                 <div className="ee-entry-inner">
                   <div className="ee-job-header">
                     <div className="ee-job-title">

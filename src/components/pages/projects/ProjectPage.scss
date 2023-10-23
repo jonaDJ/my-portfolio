@@ -2,6 +2,32 @@
 @import "../../../assets/styles/fonts";
 @import "../../../assets/styles/mixins";
 
+.project-section {
+  background-color: $deep-teal;
+  padding: 3rem 0;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.project-title-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-family: "Source Serif Pro";
+  color: $pale-linen;
+  h2 {
+    font-size: map-get(map-get($font-sizes, desktop), h2);
+  }
+
+  p {
+    font-size: map-get(map-get($font-sizes, desktop), subtext);
+  }
+}
+
 .project-all-cards {
   display: flex;
   padding: 20px 22px;
@@ -95,15 +121,38 @@
   }
 
   button {
+    width: 100%;
     padding: 5px;
     color: black;
-    font-family: Inter;
+    font-family: Crimson Text;
+    background-color: $deep-teal;
     font-size: map-get(map-get($font-sizes, desktop), body);
     font-weight: 400;
+
+    &:hover {
+      background-color: $steel-blue;
+    }
   }
 }
 
 @include breakpoint-tablet {
+  .project-section {
+    padding: 1rem 0;
+  }
+  .project-container {
+    gap: 5px;
+  }
+
+  .project-title-header {
+    h2 {
+      font-size: map-get(map-get($font-sizes, tablet), h2);
+    }
+
+    p {
+      font-size: map-get(map-get($font-sizes, tablet), subtext);
+    }
+  }
+
   .project-card {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -137,9 +186,29 @@
 }
 
 @media screen and (max-width: 600px) {
+  .project-section {
+    background-color: $deep-teal;
+    padding: 1rem 0;
+  }
+
+  .project-container {
+    gap: 0;
+  }
+
+  .project-title-header {
+    h2 {
+      font-size: map-get(map-get($font-sizes, mobile), h2);
+    }
+
+    p {
+      font-size: map-get(map-get($font-sizes, mobile), subtext);
+    }
+  }
+
   .project-all-cards {
     gap: 15px;
   }
+
   .project-card {
     display: grid;
     grid-template-columns: auto;

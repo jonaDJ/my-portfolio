@@ -11,19 +11,19 @@ const ProjectPage: React.FC = () => {
       desc: "Over A Four-Year Program, I Earned Certification As A Top-Ranking Student, Successfully Completing A Rigorous Curriculum Of 32 Subjects,",
     },
     {
-      id: 1,
-      title: "React Project",
-      used: "HTML, CSS, and Javascript",
-      desc: "Over A Four-Year Program, I Earned Certification As A Top-Ranking Student, Successfully Completing A Rigorous Curriculum Of 32 Subjects,",
-    },
-    {
-      id: 1,
-      title: "React Project",
-      used: "HTML, CSS, and Javascript",
-      desc: "Over A Four-Year Program, I Earned Certification As A Top-Ranking Student, Successfully Completing A Rigorous Curriculum Of 32 Subjects,",
-    },
-    {
       id: 2,
+      title: "React Project",
+      used: "HTML, CSS, and Javascript",
+      desc: "Over A Four-Year Program, I Earned Certification As A Top-Ranking Student, Successfully Completing A Rigorous Curriculum Of 32 Subjects,",
+    },
+    {
+      id: 3,
+      title: "React Project",
+      used: "HTML, CSS, and Javascript",
+      desc: "Over A Four-Year Program, I Earned Certification As A Top-Ranking Student, Successfully Completing A Rigorous Curriculum Of 32 Subjects,",
+    },
+    {
+      id: 4,
       title: "Vanilla Project",
       used: "HTML, CSS, and JS",
       desc: "Over Aleting A Rigorous Curriculum Of 32 Subjects,",
@@ -34,15 +34,16 @@ const ProjectPage: React.FC = () => {
       <WrapperComponent>
         <div className="project-container">
           <div className="project-title-header">
-            <h2>Welecome to project Page</h2>
+            <h2>PROJECT PAGE</h2>
             <p>
-              Here you will all different types of project I have done in my
-              free time. You explore more on frontend skills
+              Here you will find all different types of project I have done in
+              my free time. You explore more on frontend skills. Hope you learn
+              something!
             </p>
           </div>
           <div className="project-all-cards">
             {projectData.map((data) => (
-              <div className="project-card">
+              <div key={data.id} className="project-card">
                 <img src={img} alt="card" />
                 <div className="project-card-header">
                   <div className="project-card-title-container">

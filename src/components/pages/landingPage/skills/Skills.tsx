@@ -9,14 +9,16 @@ const Skills: React.FC = () => {
         <div className="skills-container">
           <h2 className="skills-header">SKILLS</h2>
           <div className="skills-content">
-            {skillsData.items.map((categoryData) => (
-              <div className="skill-category">
+            {skillsData.items.map((categoryData, categoryIndex) => (
+              <div key={categoryIndex} className="skill-category">
                 <h3 className="skill-category-header">
                   {categoryData.category}
                 </h3>
                 <ul className="skill-category-items">
-                  {categoryData.skills.map((skill) => (
-                    <li className="skill-item">{skill}</li>
+                  {categoryData.skills.map((skill, skillIndex) => (
+                    <li key={skillIndex} className="skill-item">
+                      {skill}
+                    </li>
                   ))}
                 </ul>
               </div>

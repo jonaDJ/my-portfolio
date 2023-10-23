@@ -87,24 +87,25 @@
 }
 
 .name {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-shrink: 0;
-  align-self: stretch;
-  color: $pale-linen;
   font-family: cursive;
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   padding: 10px 0;
+
+  a {
+    text-decoration: none;
+    color: $pale-linen;
+    cursor: pointer;
+  }
 }
 
 .outerNav {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
+  gap: 10px;
 
   &.outer-nav-open {
     display: block;
@@ -118,7 +119,7 @@
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
-  gap: 5px;
+  gap: 10px;
 }
 
 .bigger {
