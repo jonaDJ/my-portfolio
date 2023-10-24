@@ -32,14 +32,18 @@ This repository contains the source code for Jonathan Darla's portfolio website.
     - [Local Development](#local-development)
 
 ## Home
-
 ### About
 
 A brief introduction about Jonathan Darla, highlighting key strengths and achievements.
 
+![ABOUT DESKTOP](https://user-images.githubusercontent.com/145041345/277506984-67e30fd6-50e8-43b7-8a3b-274e52c3ea6c.png) 
+![ABOUT MOBILE](https://user-images.githubusercontent.com/145041345/277511457-c2d7540d-f466-4cf4-b8b3-d99697ef12b8.png)
+
 ### Education and Experience
 
 Jonathan's educational background and work experience, presented in a timeline or sections, showcasing each role with responsibilities and achievements.
+![EE DESKTOP](https://user-images.githubusercontent.com/145041345/277511530-1537f20b-62f3-4cb7-b2e2-a36fe33728f0.png) 
+
 
 ### Skills and Certifications
 
@@ -54,12 +58,15 @@ A list of key projects Jonathan has worked on, including project names, descript
 ### Individual Project Pages
 
 Separate pages or modals for each project, providing in-depth details with code snippets, project screenshots, and links to live demos or GitHub repositories.
+![PROJECTS](https://user-images.githubusercontent.com/145041345/277511918-646be1a9-d342-423c-89e2-212b8d42861d.png)
 
 ## Contact
 
 ### Contact Information
 
 Jonathan's contact details, including email, phone, and location.
+
+![contact](https://user-images.githubusercontent.com/145041345/277512046-ff816dbb-5fda-4cb6-a71a-0580d69d2747.png)
 
 ### Contact Form
 
