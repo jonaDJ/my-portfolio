@@ -1,5 +1,3 @@
-# Under Development
-
 # Portfolio
 
 ## Overview
