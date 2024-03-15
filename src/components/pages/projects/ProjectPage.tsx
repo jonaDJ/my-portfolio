@@ -1,48 +1,23 @@
 import WrapperComponent from "../../wrapperComponent/WrapperComponent";
 import "./ProjectPage.scss";
 import img from "../../../assets/images/myAvatar.png";
+import { ProjectDataProps } from "../../../data/projectPageData";
 
-const ProjectPage: React.FC = () => {
-  const projectData = [
-    {
-      id: 1,
-      title: "React Project",
-      used: "HTML, CSS, and Javascript",
-      desc: "Over A Four-Year Program, I Earned Certification As A Top-Ranking Student, Successfully Completing A Rigorous Curriculum Of 32 Subjects,",
-    },
-    {
-      id: 2,
-      title: "React Project",
-      used: "HTML, CSS, and Javascript",
-      desc: "Over A Four-Year Program, I Earned Certification As A Top-Ranking Student, Successfully Completing A Rigorous Curriculum Of 32 Subjects,",
-    },
-    {
-      id: 3,
-      title: "React Project",
-      used: "HTML, CSS, and Javascript",
-      desc: "Over A Four-Year Program, I Earned Certification As A Top-Ranking Student, Successfully Completing A Rigorous Curriculum Of 32 Subjects,",
-    },
-    {
-      id: 4,
-      title: "Vanilla Project",
-      used: "HTML, CSS, and JS",
-      desc: "Over Aleting A Rigorous Curriculum Of 32 Subjects,",
-    },
-  ];
+const ProjectPage: React.FC<ProjectDataProps> = ({
+  title,
+  desc,
+  projectList,
+}) => {
   return (
     <div className="project-section">
       <WrapperComponent>
         <div className="project-container">
           <div className="project-title-header">
-            <h2>PROJECT PAGE</h2>
-            <p>
-              Here you will find all different types of project I have done in
-              my free time. You explore more on frontend skills. Hope you learn
-              something!
-            </p>
+            <h2>{title}</h2>
+            <p>{desc}</p>
           </div>
           <div className="project-all-cards">
-            {projectData.map((data) => (
+            {projectList.map((data) => (
               <div key={data.id} className="project-card">
                 <img src={img} alt="card" />
                 <div className="project-card-header">

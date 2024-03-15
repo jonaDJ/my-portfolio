@@ -2,13 +2,20 @@ import AboutSec from "../landingPage/aboutSection/AboutSec";
 import ExperienceEducation from "../landingPage/experienceAndEducation/ExperienceAndEducation";
 import Certificates from "./certificates/Certificates";
 import Skills from "./skills/Skills";
-const LandingPage: React.FC = () => {
+import { LandingPageProps } from "../../../data/landingPageData";
+
+const LandingPage: React.FC<LandingPageProps> = ({
+  aboutSectionData,
+  experienceAndEducationData,
+  certificatesData,
+  skillsData,
+}) => {
   return (
     <div>
-      <AboutSec />
-      <ExperienceEducation />
-      <Skills />
-      <Certificates />
+      <AboutSec aboutSectionData={aboutSectionData} />
+      <ExperienceEducation eeData={experienceAndEducationData} />
+      <Skills skillsData={skillsData} />
+      <Certificates certifcatesData={certificatesData} />
     </div>
   );
 };

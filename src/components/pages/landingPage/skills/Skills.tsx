@@ -1,15 +1,20 @@
+import { SkillsDataProps } from "../../../../data/landingPageData";
 import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
 import "./Skills.scss";
-import skillsData from "./SkillsData.json";
+// import skillsData from "./SkillsData.json";
 
-const Skills: React.FC = () => {
+interface SkillsProps {
+  skillsData: SkillsDataProps;
+}
+
+const Skills: React.FC<SkillsProps> = ({ skillsData }) => {
   return (
     <section className="skills-section">
       <WrapperComponent>
         <div className="skills-container">
           <h2 className="skills-header">SKILLS</h2>
           <div className="skills-content">
-            {skillsData.items.map((categoryData, categoryIndex) => (
+            {skillsData.categories.map((categoryData, categoryIndex) => (
               <div key={categoryIndex} className="skill-category">
                 <h3 className="skill-category-header">
                   {categoryData.category}

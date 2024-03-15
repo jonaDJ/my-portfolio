@@ -1,34 +1,17 @@
 import WrapperComponent from "../../wrapperComponent/WrapperComponent";
 import "./ContactMe.scss";
 import downloadIcon from "../../../assets/icon/download-solid.svg";
+import { ContactPageProps } from "../../../data/contactPageData";
 
-const ContactMe: React.FC = () => {
-  const contactDetails = [
-    {
-      id: 1,
-      icon: require("../../../assets/icon/location-icon.svg").default,
-      info: "City, State",
-    },
-    {
-      id: 2,
-      icon: require("../../../assets/icon/email-icon.svg").default,
-      info: "Jon@gmail.com",
-    },
-    {
-      id: 3,
-      icon: require("../../../assets/icon/phone-icon.svg").default,
-      info: "123-456-7890",
-    },
-  ];
-
+const ContactMe: React.FC<ContactPageProps> = ({
+  title,
+  desc,
+  contactDetails,
+}) => {
   const AboutMe: React.FC = () => (
     <div className="contact-about-me">
       <div className="contact-info">
-        <p>
-          You can find my contact details below, or use the form to send me a
-          message. I'm always here to answer your questions and assist you in
-          any way I can.
-        </p>
+        <p>{desc}</p>
         <ul className="contact-details">
           {contactDetails.map((data) => (
             <li key={data.id} id={`contact-details-${data.id}`}>
@@ -90,7 +73,7 @@ const ContactMe: React.FC = () => {
       <WrapperComponent>
         <div className="contact-page-section">
           <div className="contact-page-title">
-            <h2>CONTACT</h2>
+            <h2>{title}</h2>
           </div>
 
           <div className="contact-container">

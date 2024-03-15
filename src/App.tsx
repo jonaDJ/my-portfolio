@@ -1,11 +1,20 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import "./App.css";
-import LandingPage from "./components/pages/landingPage/LandingPage";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
-import ProjectPage from "./components/pages/projects/ProjectPage";
-import ContactMe from "./components/pages/contactMe/ContactMe";
+import LoadingState from "./components/states/loadingState/LoadingState";
+import landingPageData from "./data/landingPageData";
+import projectPageData from "./data/projectPageData";
+import contactPageData from "./data/contactPageData";
+
+const LandingPage = lazy(
+  () => import("./components/pages/landingPage/LandingPage")
+);
+const ProjectPage = lazy(
+  () => import("./components/pages/projects/ProjectPage")
+);
+const ContactMe = lazy(() => import("./components/pages/contactMe/ContactMe"));
 
 const router = createBrowserRouter([
   {
@@ -22,15 +31,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <LandingPage />,
+        element: (
+          <Suspense fallback={<LoadingState />}>
+            <LandingPage {...landingPageData} />
+          </Suspense>
+        ),
       },
       {
         path: "/Project",
-        element: <ProjectPage />,
+        element: (
+          <Suspense fallback={<LoadingState />}>
+            <ProjectPage {...projectPageData} />
+          </Suspense>
+        ),
       },
       {
         path: "/Contact",
-        element: <ContactMe />,
+        element: (
+          <Suspense fallback={<LoadingState />}>
+            <ContactMe {...contactPageData} />
+          </Suspense>
+        ),
       },
     ],
   },
