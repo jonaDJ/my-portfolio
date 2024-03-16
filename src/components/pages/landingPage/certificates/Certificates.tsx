@@ -2,10 +2,9 @@ import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
 import "./Certificates.scss";
 import { CertificateProps } from "../../../../data/landingPageData";
 
-interface CertificatesSecProps {
-  certifcatesData: CertificateProps[];
-}
-const Certificates: React.FC<CertificatesSecProps> = ({ certifcatesData }) => {
+const Certificates: React.FC<{ certifcatesData: CertificateProps[] }> = ({
+  certifcatesData,
+}) => {
   return (
     <section className="certificates-section">
       <WrapperComponent>
@@ -14,7 +13,7 @@ const Certificates: React.FC<CertificatesSecProps> = ({ certifcatesData }) => {
           <ul className="certificates-all-cards">
             {certifcatesData.map((data) => (
               <li key={data.id} className="certificates-card">
-                <img src={data.img} alt="card-img" />
+                <img src={data.img} alt={`Certificate: ${data.title}`} />
                 <h3>{data.title}</h3>
               </li>
             ))}

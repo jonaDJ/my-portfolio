@@ -36,8 +36,8 @@ export interface SkillsDataProps {
 export interface LandingPageProps {
   aboutSectionData: AboutSectionProps;
   experienceAndEducationData: ExperienceAndEducationProps;
-  certificatesData: CertificateProps[];
   skillsData: SkillsDataProps;
+  certificatesData: CertificateProps[];
 }
 
 const landingPageData = {

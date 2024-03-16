@@ -28,7 +28,6 @@
       flex-direction: column;
       align-items: flex-start;
       position: fixed;
-      // position: absolute;
       left: 0;
       width: 100%;
       padding-left: 2rem;
@@ -48,7 +47,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -123,14 +122,7 @@
 }
 
 .bigger {
-  display: flex;
-  gap: 5px;
-  a {
-    color: #e3dfdc;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 5px;
-  }
+  display: none;
 }
 
 .navbar a,
@@ -154,12 +146,18 @@
   .app-header.nav-open .sideNavBar {
     padding-left: 1rem;
   }
+  .burger-button {
+    display: flex;
+  }
 }
 
 @include breakpoint-tablet {
   .app-header.nav-open .sideNavBar {
     max-width: 750px;
-    // padding-left: 2rem;
+  }
+
+  .burger-button {
+    display: flex;
   }
 }
 
@@ -167,5 +165,29 @@
   .app-header.nav-open .sideNavBar {
     max-width: 970px;
     padding-left: 3rem;
+  }
+
+  .sideNavBar {
+    display: flex;
+    gap: 5px;
+    a {
+      color: #e3dfdc;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+  }
+}
+
+@include breakpoint-desktop {
+  .sideNavBar {
+    display: flex;
+    gap: 5px;
+    a {
+      color: #e3dfdc;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
   }
 }

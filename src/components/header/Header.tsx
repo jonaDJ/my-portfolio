@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Header.scss";
 import git from "../../assets/icon/git-icon.svg";
 import linkedIn from "../../assets/icon/linkedIn-icon.svg";
@@ -12,26 +12,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ name }) => {
   const [isOpenNav, setIsOpenNav] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // mobile width
 
   const menuClickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setIsOpenNav(!isOpenNav);
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); //mixin for breakpoint-tablet
-      if (!isMobile) {
-        setIsOpenNav(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isMobile]);
 
   const onNavClickHandler = () => {
     setIsOpenNav(false);
@@ -47,19 +32,12 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
           <div className={`outerNav ${isOpenNav ? "outer-nav-open" : ""}`}>
             <div className="navbar">
               <div className="icon-links">
-                {isMobile && (
-                  <button onClick={menuClickHandler} className="burger-button">
-                    <div
-                      className={`burger ${isOpenNav ? "active" : ""}`}
-                    ></div>
-                    <div
-                      className={`burger ${isOpenNav ? "active" : ""}`}
-                    ></div>
-                    <div
-                      className={`burger ${isOpenNav ? "active" : ""}`}
-                    ></div>
-                  </button>
-                )}
+                <button onClick={menuClickHandler} className="burger-button">
+                  <div className={`burger ${isOpenNav ? "active" : ""}`}></div>
+                  <div className={`burger ${isOpenNav ? "active" : ""}`}></div>
+                  <div className={`burger ${isOpenNav ? "active" : ""}`}></div>
+                </button>
+
                 <a href="https://github.com">
                   <img src={git} alt="git" />
                 </a>
@@ -71,19 +49,18 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
                 </a>
               </div>
             </div>
-            {(isOpenNav || !isMobile) && (
-              <div className={`sideNavBar ${!isMobile ? "bigger" : ""}`}>
-                <Link to="/" onClick={onNavClickHandler}>
-                  ABOUT
-                </Link>
-                <Link to="/Project" onClick={onNavClickHandler}>
-                  PROJECT
-                </Link>
-                <Link to="/Contact" onClick={onNavClickHandler}>
-                  CONTACT
-                </Link>
-              </div>
-            )}
+
+            <div className={`sideNavBar ${isOpenNav ? "smaller" : "bigger"}`}>
+              <Link to="/" onClick={onNavClickHandler}>
+                ABOUT
+              </Link>
+              <Link to="/Project" onClick={onNavClickHandler}>
+                PROJECT
+              </Link>
+              <Link to="/Contact" onClick={onNavClickHandler}>
+                CONTACT
+              </Link>
+            </div>
           </div>
         </div>
       </WrapperComponent>
