@@ -25,15 +25,14 @@
 .ee-title {
   flex: 1;
   text-align: center;
-  padding: 10px;
+  padding: 0.5rem 0;
   border-radius: 2px;
   background: $steel-blue;
   flex-shrink: 0;
   color: $pale-linen;
-  font-family: "Source Serif Pro";
   font-size: map-get(map-get($font-sizes, desktop), h2);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
 }
 
@@ -42,7 +41,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 2rem;
 }
 
 .ee-entry-outer {
@@ -64,43 +63,66 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 6px;
+  gap: 1rem;
+
+  &.ee-entry-inner-ex {
+    border-right: 1px solid black;
+  }
+
+  &.ee-entry-inner-edu {
+    border-left: 1px solid black;
+
+    .ee-job-header {
+      align-items: flex-start;
+    }
+
+    .ee-job-title,
+    .ee-description,
+    .ee-job-details {
+      text-align: right;
+    }
+  }
 }
 
 .ee-job-header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
+  width: 100%;
 }
 
 .ee-job-title {
   color: #000;
-  font-family: Source Serif Pro;
   font-size: map-get(map-get($font-sizes, desktop), h3);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-align: left;
+  width: 100%;
 }
 
 .ee-job-details {
   color: #000;
-  font-family: Source Serif Pro;
-  font-size: 20px;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 500;
   line-height: normal;
   font-size: map-get(map-get($font-sizes, desktop), subtext);
+  width: 100%;
 }
 
 .ee-description {
-  color: var(--midnight-black, #0f171a);
-  font-family: Source Serif Pro;
-  font-size: map-get(map-get($font-sizes, desktop), body);
+  color: $dark;
+  font-size: map-get(map-get($font-sizes, desktop), subtext);
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: normal;
   text-align: left;
+}
+
+.ee-hr {
+  background-color: black;
+  width: 30%;
+  height: 1px;
 }
 
 .ee-title-separate {
@@ -124,7 +146,7 @@
   }
 
   .ee-description {
-    font-size: map-get(map-get($font-sizes, tablet), body);
+    font-size: map-get(map-get($font-sizes, tablet), subtext);
   }
 }
 
@@ -136,9 +158,26 @@
   .ee-title {
     font-size: map-get(map-get($font-sizes, mobile), h2);
   }
+
   .ee-entry-inner {
     width: auto;
   }
+
+  .ee-entry-inner.ee-entry-inner-ex,
+  .ee-entry-inner.ee-entry-inner-edu {
+    border: 0px;
+  }
+
+  .ee-entry-inner.ee-entry-inner-edu .ee-job-header {
+    align-items: flex-start;
+  }
+
+  .ee-entry-inner.ee-entry-inner-edu .ee-job-title,
+  .ee-entry-inner.ee-entry-inner-edu .ee-description,
+  .ee-entry-inner.ee-entry-inner-edu .ee-job-details {
+    text-align: left;
+  }
+
   .ee-entry-outer {
     &.experience {
       order: -1;
@@ -152,9 +191,12 @@
   .ee-title-mobile {
     display: none;
   }
+
   .ee-job-title {
     font-size: map-get(map-get($font-sizes, mobile), h3);
+    border-bottom: 0px;
   }
+
   .ee-entry-outer {
     padding: 10px;
     border-top: 1px solid #000;
@@ -163,6 +205,7 @@
   .ee-job-details {
     font-size: map-get(map-get($font-sizes, mobile), subtext);
   }
+
   .ee-section {
     gap: 0;
   }
@@ -170,10 +213,16 @@
   .ee-title-seperate {
     display: flex;
   }
+
   .ee-details {
     gap: 0;
   }
+
   .ee-description {
-    font-size: map-get(map-get($font-sizes, mobile), body);
+    font-size: map-get(map-get($font-sizes, mobile), subtext);
+  }
+
+  .ee-hr {
+    display: none;
   }
 }

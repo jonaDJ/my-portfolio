@@ -1,7 +1,6 @@
 @import "../../../../assets/styles/mixins";
 @import "../../../../assets/styles/color";
 @import "../../../../assets/styles/fonts";
-
 .about-me-main {
   padding: 5rem 0;
   background-color: $deep-teal;
@@ -32,11 +31,9 @@
 .my-role {
   color: #fff;
   text-align: center;
-  font-family: "Source Serif Pro";
   font-size: map-get(map-get($font-sizes, desktop), h2);
   font-weight: 400;
   line-height: normal;
-  width: 429px;
 }
 
 .about-me-desc {
@@ -50,7 +47,6 @@
 
 .about-me-desc p {
   color: #fff;
-  font-family: "Source Serif Pro";
   font-size: map-get(map-get($font-sizes, desktop), body);
   line-height: 2rem;
   font-weight: 400;

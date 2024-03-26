@@ -7,19 +7,18 @@ import { ProjectDataProps, Projects } from "../../../data/projectPageData";
 const ProjectCard: React.FC<{ data: Projects }> = ({ data }) => (
   <div className="project-card">
     <img src={img} alt={`Project: ${data.title}`} aria-hidden="true" />
+
     <div className="project-card-header">
       <div className="project-card-title-container">
         <div className="project-card-title-header">
-          <h3>{data.title}</h3>
+          <h2>{data.title}</h2>
           <p>Tools used: {data.used}</p>
         </div>
         <hr className="project-card-line" />
       </div>
       <div className="project-card-desc">
         <p>{data.desc}</p>
-        <button aria-label={`Learn more about ${data.title}`}>
-          Learn more
-        </button>
+        <button aria-label={`Learn more about ${data.title}`}>Git Repo</button>
       </div>
     </div>
   </div>

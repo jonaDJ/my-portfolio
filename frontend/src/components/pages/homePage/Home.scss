@@ -1,0 +1,170 @@
+@import "../../../assets/styles/mixins";
+@import "../../../assets/styles/color";
+@import "../../../assets/styles/fonts";
+
+.calltoaction-section {
+  padding: 5rem 0;
+  background-color: $midnight-black;
+}
+
+.calltoaction-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.calltoaction-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.calltoaction-avatar {
+  width: 324px;
+  height: 320px;
+  border-radius: 324px;
+  object-fit: cover;
+}
+
+.calltoaction-title {
+  color: #fff;
+  text-align: center;
+  font-family: "Anonymous Pro", monospace;
+  font-size: map-get(map-get($font-sizes, desktop), h1);
+  font-weight: 400;
+  line-height: normal;
+  width: 429px;
+}
+
+.calltoaction-desc {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 1rem;
+  color: #fff;
+  font-family: "Anonymous Pro", monospace;
+  font-size: map-get(map-get($font-sizes, desktop), h1);
+  font-weight: 400;
+  line-height: normal;
+  flex-shrink: 0;
+}
+
+.calltoaction-button {
+  font-family: "Anonymous Pro", monospace;
+  font-size: map-get(map-get($font-sizes, desktop), body);
+  font-weight: 400;
+  padding: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  color: black;
+  z-index: 1;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    background: $midnight-black;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+
+    clip-path: circle(0% at 50% 50%);
+    transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 0.8s;
+    z-index: -1;
+  }
+
+  &:hover {
+    &:after {
+      clip-path: circle(100% at 50% 50%);
+      transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 2s;
+    }
+
+    color: $deep-teal;
+  }
+}
+
+@include breakpoint-laptop {
+  .calltoaction-desc {
+    font-size: map-get(map-get($font-sizes, desktop), h1);
+    line-height: normal;
+    align-items: flex-start;
+  }
+}
+
+@include breakpoint-tablet {
+  .calltoaction-main {
+    padding: 3rem 0;
+    background-color: $deep-teal;
+  }
+  .calltoaction-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .calltoaction-header {
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .calltoaction-avatar {
+    width: 216px;
+    height: 212px;
+  }
+
+  .calltoaction-title {
+    font-size: map-get(map-get($font-sizes, tablet), h1);
+    width: auto;
+  }
+
+  .calltoaction-desc {
+    font-size: map-get(map-get($font-sizes, tablet), h1);
+    line-height: normal;
+    align-items: center;
+  }
+}
+
+@include breakpoint-mobile {
+  .calltoaction-section {
+    padding: 2rem 0;
+  }
+
+  .calltoaction-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .calltoaction-header {
+    flex-direction: row;
+    width: auto;
+    gap: 2px;
+  }
+
+  .calltoaction-avatar {
+    width: 177px;
+    height: 163px;
+  }
+
+  .calltoaction-desc {
+    font-size: map-get(map-get($font-sizes, mobile), h1);
+    line-height: normal;
+    align-items: center;
+  }
+
+  .calltoaction-title {
+    width: auto;
+    font-size: map-get(map-get($font-sizes, mobile), h1);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .calltoaction-header {
+    flex-direction: column;
+  }
+}

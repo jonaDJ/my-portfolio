@@ -3,7 +3,7 @@
 @import "../../../../assets/styles/fonts";
 
 .skills-section {
-  background-color: $deep-teal;
+  background-color: $midnight-black;
   padding: 5rem 0;
 }
 
@@ -11,88 +11,48 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 21px;
+  gap: 2rem;
 }
 
 .skills-header {
   font-size: map-get(map-get($font-sizes, desktop), h2);
   color: $pale-linen;
-  font-family: "Source Serif Pro";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
+  border-bottom: 0.5px solid $deep-teal;
+  width: 100%;
 }
 
 .skills-content {
   display: flex;
   width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 27px;
-}
-.skill-category {
-  border-radius: 5px;
-  padding: 30px 6px;
-  background: $pale-linen;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  justify-items: start;
-}
-
-.skill-category-header {
-  font-size: map-get(map-get($font-sizes, desktop), h3);
-  height: 33px;
-  color: #000;
-  border-bottom: 1px solid;
-  width: 100%;
-  font-family: "Source Serif Pro";
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-align: center;
-}
-
-.skill-category-items {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  gap: 17px 19px;
   flex-wrap: wrap;
   justify-content: center;
-}
+  align-self: start;
+  gap: 0.5rem;
 
-.skill-item {
-  font-size: map-get(map-get($font-sizes, desktop), subtext);
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 5px;
-  background: $deep-teal;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: $pale-linen;
+  a img {
+    height: 2rem;
+    border: 2px solid transparent;
+    -webkit-transition: ease-out 0.5s;
+    -moz-transition: ease-out 0.5s;
+    transition: ease-out 0.5s;
+  }
+
+  a img:hover {
+    border: 2px solid $light-smoke;
+    box-shadow: 0 0 20px #0ebac5;
+  }
 }
 
 @include breakpoint-tablet {
   .skills-section {
     padding: 3rem 0;
   }
+
   .skills-header {
     font-size: map-get(map-get($font-sizes, tablet), h2);
-  }
-
-  .skill-category-header {
-    font-size: map-get(map-get($font-sizes, tablet), h3);
-  }
-  .skill-item {
-    font-size: map-get(map-get($font-sizes, tablet), subtext);
   }
 }
 
@@ -100,24 +60,8 @@
   .skills-section {
     padding: 1rem 0;
   }
+
   .skills-header {
     font-size: map-get(map-get($font-sizes, mobile), h2);
-  }
-
-  .skills-content {
-    width: auto;
-  }
-
-  .skill-category {
-    padding: 15px 0;
-  }
-
-  .skill-category-header {
-    text-align: center;
-    width: 100%;
-    font-size: map-get(map-get($font-sizes, mobile), h3);
-  }
-  .skill-item {
-    font-size: map-get(map-get($font-sizes, mobile), subtext);
   }
 }

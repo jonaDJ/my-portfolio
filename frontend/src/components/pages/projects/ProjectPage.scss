@@ -3,21 +3,20 @@
 @import "../../../assets/styles/mixins";
 
 .project-section {
-  background-color: $deep-teal;
+  background-color: $dark;
   padding: 3rem 0;
 }
 
 .project-container {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 4rem;
 }
 
 .project-title-header {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  font-family: "Source Serif Pro";
+  gap: 0.5rem;
   color: $pale-linen;
   h2 {
     font-size: map-get(map-get($font-sizes, desktop), h2);
@@ -30,108 +29,120 @@
 
 .project-all-cards {
   display: flex;
-  padding: 20px 22px;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 51px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .project-card {
-  display: flex;
-  padding-bottom: 0px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: $light-smoke;
-  padding-bottom: 5px;
-
-  &:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
+  padding: 0rem 1rem 1rem 0;
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.5rem;
+  border-top: 1px solid $pale-linen;
+  color: $pale-linen;
 }
+
 .project-card img {
-  width: 284px;
-  height: 198px;
-  object-fit: cover;
+  flex: 0 50%;
+  max-width: 100%;
 }
 
 .project-card-header {
   display: flex;
-  padding: 0px 21px;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.project-card-title-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
-  hr {
-    width: 165px;
-  }
+  padding-top: 1rem;
 }
 
 .project-card-title-header {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2px;
-
-  h3 {
-    color: #000;
-    font-family: "Playfair Display";
-    font-size: 24px;
-    font-size: map-get(map-get($font-sizes, desktop), h3);
-    font-weight: 700;
-    line-height: normal;
-  }
-
-  p {
-    text-align: center;
-    color: #000;
-    font-family: "Playfair Display";
-    font-size: map-get(map-get($font-sizes, desktop), subtext);
-
+  gap: 0.3rem;
+  h2 {
     font-weight: 400;
-    font-style: italic;
+    font-size: map-get(map-get($font-sizes, desktop), h3);
   }
+}
+
+.project-card-line {
+  width: 30%;
+  margin-left: 0;
 }
 
 .project-card-desc {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 27px;
-
-  p {
-    color: $midnight-black;
-    text-align: center;
-    font-family: Crimson Text;
-
-    font-size: map-get(map-get($font-sizes, desktop), subtext);
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 182px;
-    text-transform: capitalize;
-    min-height: 7 * 1.2em;
-  }
+  gap: 1rem;
+  align-items: flex-end;
 
   button {
-    width: 100%;
-    padding: 5px;
-    color: black;
-    font-family: Crimson Text;
-    background-color: $deep-teal;
-    font-size: map-get(map-get($font-sizes, desktop), body);
+    font-family: "Anonymous Pro", monospace;
+    font-size: map-get(map-get($font-sizes, desktop), link);
     font-weight: 400;
+    padding: 0.3rem;
+    position: relative;
+    cursor: pointer;
+    color: black;
+    z-index: 1;
+    overflow: hidden;
+    width: 8rem;
+
+    &:after {
+      content: "";
+      background: $midnight-black;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+
+      clip-path: circle(0% at 50% 50%);
+      transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 0.8s;
+      z-index: -1;
+    }
 
     &:hover {
-      background-color: $steel-blue;
+      &:after {
+        clip-path: circle(100% at 50% 50%);
+        transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 2s;
+      }
+
+      color: $deep-teal;
     }
+  }
+}
+
+@include breakpoint-mobile {
+  .project-section {
+    padding: 1rem 0;
+  }
+
+  .project-title-header {
+    h2 {
+      font-size: map-get(map-get($font-sizes, mobile), h2);
+    }
+    p {
+      font-size: map-get(map-get($font-sizes, mobile), subtext);
+    }
+  }
+
+  .project-card-header {
+    padding: 0.6rem;
+
+    h2 {
+      font-size: map-get(map-get($font-sizes, mobile), h3);
+    }
+
+    p {
+      font-size: map-get(map-get($font-sizes, mobile), subtext);
+    }
+  }
+
+  .project-container {
+    gap: 2rem;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    padding: 0;
   }
 }
 
@@ -139,118 +150,40 @@
   .project-section {
     padding: 1rem 0;
   }
-  .project-container {
-    gap: 5px;
-  }
 
   .project-title-header {
     h2 {
       font-size: map-get(map-get($font-sizes, tablet), h2);
     }
-
     p {
       font-size: map-get(map-get($font-sizes, tablet), subtext);
     }
+  }
+
+  .project-container {
+    gap: 2rem;
   }
 
   .project-card {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    padding-bottom: 0;
-    padding: 10px;
+    grid-template-columns: 1fr;
+    padding: 0;
   }
 
-  .project-card img {
-    width: auto;
-    max-width: 360px;
-  }
+  .project-card-header {
+    padding: 0.6rem;
 
-  .project-card-title-header {
-    h3 {
+    h2 {
       font-size: map-get(map-get($font-sizes, tablet), h3);
     }
+
     p {
       font-size: map-get(map-get($font-sizes, tablet), subtext);
-    }
-  }
-  .project-card-desc {
-    p {
-      width: auto;
-      min-height: 4 * 1.2em;
-      font-size: map-get(map-get($font-sizes, tablet), subtext);
-    }
-    button {
-      font-size: map-get(map-get($font-sizes, tablet), body);
     }
   }
 }
 
-@media screen and (max-width: 600px) {
-  .project-section {
-    background-color: $deep-teal;
-    padding: 1rem 0;
-  }
-
-  .project-container {
-    gap: 0;
-  }
-
-  .project-title-header {
-    h2 {
-      font-size: map-get(map-get($font-sizes, mobile), h2);
-    }
-
-    p {
-      font-size: map-get(map-get($font-sizes, mobile), subtext);
-    }
-  }
-
-  .project-all-cards {
-    gap: 15px;
-  }
-
+@include breakpoint-laptop {
   .project-card {
-    display: grid;
-    grid-template-columns: auto;
-    justify-items: center;
-  }
-
-  .project-card-header {
-    flex-direction: row;
-    padding-top: 10px;
-  }
-
-  .project-card img {
-    max-width: 100%;
-    height: auto;
-    width: 100%;
-  }
-
-  .project-card-title-container {
-    flex-direction: row;
-    hr {
-      transform: rotate(90deg);
-      width: 45px;
-    }
-  }
-
-  .project-card-title-header {
-    h3 {
-      font-size: map-get(map-get($font-sizes, mobile), h3);
-    }
-    p {
-      text-align: left;
-      font-size: map-get(map-get($font-sizes, mobile), subtext);
-    }
-  }
-
-  .project-card-desc {
-    p {
-      width: auto;
-      font-size: map-get(map-get($font-sizes, mobile), subtext);
-    }
-    button {
-      font-size: map-get(map-get($font-sizes, mobile), body);
-    }
+    grid-template-columns: 7fr 5fr;
   }
 }

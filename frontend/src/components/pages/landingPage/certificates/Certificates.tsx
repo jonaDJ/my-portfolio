@@ -9,12 +9,13 @@ const Certificates: React.FC<{ certifcatesData: CertificateProps[] }> = ({
     <section className="certificates-section">
       <WrapperComponent>
         <div className="certificates-container">
-          <h2 className="certificates-header">Certificates</h2>
-          <ul className="certificates-all-cards">
+          <h2 className="certificates-header">CERTIFICATES</h2>
+          <ul className="certificates-items">
             {certifcatesData.map((data) => (
-              <li key={data.id} className="certificates-card">
-                <img src={data.img} alt={`Certificate: ${data.title}`} />
-                <h3>{data.title}</h3>
+              <li key={data.id} className="certificates-item">
+                <a href="/">
+                  <span>{data.title}</span>
+                </a>
               </li>
             ))}
           </ul>

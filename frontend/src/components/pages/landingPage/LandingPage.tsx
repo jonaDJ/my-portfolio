@@ -16,7 +16,7 @@ const LandingPage: React.FC<LandingPageProps> = (landingPageData) => {
     <div>
       <AboutSec {...aboutSectionData} />
       <ExperienceEducation {...experienceAndEducationData} />
-      <Skills {...skillsData} />
+      <Skills skillsData={skillsData} />
       <Certificates certifcatesData={certificatesData} />
     </div>
   );

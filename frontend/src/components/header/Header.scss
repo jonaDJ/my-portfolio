@@ -1,4 +1,5 @@
 @import "../../assets/styles/color";
+@import "../../assets/styles/fonts";
 @import "../../assets/styles/mixins";
 
 .app-header {
@@ -6,7 +7,7 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  background: $midnight-black;
+  background: $deep-teal;
 
   &.nav-open {
     .burger {
@@ -27,20 +28,41 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      position: fixed;
+      position: absolute;
       left: 0;
       width: 100%;
       padding-left: 2rem;
-      background: $midnight-black;
+      background: $deep-teal;
+      gap: 0.5rem;
 
       a {
         color: $pale-linen;
         text-decoration: none;
-        font-weight: bold;
-        margin: 5px;
+        padding: 5px;
+        border: 1px solid transparent;
+        transition: color 0.3s, border-bottom-color 0.3s;
       }
     }
   }
+}
+
+.app-header.nav-open .sideNavBar a:hover,
+.sideNavBar a:hover {
+  background-color: $midnight-black;
+  color: $pale-linen;
+}
+
+.icon-links a:hover,
+.burger-button:hover {
+  background-color: $midnight-black;
+}
+
+.app-header.nav-open .sideNavBar a.active,
+.sideNavBar a.active {
+  border-bottom: 1px solid $midnight-black;
+  border-top: 1px solid $midnight-black;
+  color: $slate-gray;
+  font-weight: 600;
 }
 
 .burger-button {
@@ -51,7 +73,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 50px;
+  width: 40px;
   height: 19px;
 
   .burger {
@@ -82,7 +104,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row-reverse;
 }
 
 .name {
@@ -133,7 +154,6 @@
   align-items: center;
   color: $pale-linen;
   text-decoration: none;
-  font-weight: bold;
 }
 
 @include breakpoint-mobile {
@@ -143,17 +163,29 @@
 }
 
 @include breakpoint-mobile {
+  .header-frame {
+    font-size: map-get(map-get($font-sizes, mobile), body);
+  }
+
   .app-header.nav-open .sideNavBar {
     padding-left: 1rem;
+    padding-bottom: 1rem;
   }
+
   .burger-button {
     display: flex;
   }
 }
 
 @include breakpoint-tablet {
+  .header-frame {
+    font-weight: 400;
+    font-size: map-get(map-get($font-sizes, tablet), body);
+  }
+
   .app-header.nav-open .sideNavBar {
     max-width: 750px;
+    padding-bottom: 1rem;
   }
 
   .burger-button {
@@ -162,6 +194,10 @@
 }
 
 @include breakpoint-laptop {
+  .header-frame {
+    font-size: map-get(map-get($font-sizes, desktop), body);
+  }
+
   .app-header.nav-open .sideNavBar {
     max-width: 970px;
     padding-left: 3rem;
@@ -173,21 +209,25 @@
     a {
       color: #e3dfdc;
       text-decoration: none;
-      font-weight: bold;
-      margin: 5px;
+
+      padding: 5px;
     }
   }
 }
 
 @include breakpoint-desktop {
+  .header-frame {
+    font-size: map-get(map-get($font-sizes, desktop), body);
+  }
+
   .sideNavBar {
     display: flex;
     gap: 5px;
     a {
       color: #e3dfdc;
       text-decoration: none;
-      font-weight: bold;
-      margin: 5px;
+
+      padding: 5px;
     }
   }
 }

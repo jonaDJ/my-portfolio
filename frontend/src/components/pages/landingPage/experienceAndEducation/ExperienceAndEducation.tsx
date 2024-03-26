@@ -14,7 +14,11 @@ const ExperienceEducation: React.FC<ExperienceAndEducationProps> = (eeData) => (
         <div className="ee-details">
           {eeData.items.map((item) => (
             <div key={item.id} className={`ee-entry-outer ${item.type}`}>
-              <div className="ee-entry-inner">
+              <div
+                className={`ee-entry-inner ${
+                  item.degree ? "ee-entry-inner-edu" : "ee-entry-inner-ex"
+                }`}
+              >
                 <div className="ee-job-header">
                   <div className="ee-job-title">
                     {item.degree || item.title}
@@ -23,7 +27,9 @@ const ExperienceEducation: React.FC<ExperienceAndEducationProps> = (eeData) => (
                     className="ee-job-details"
                     aria-label="Job details"
                   >{`${item.dates}, ${item.location}`}</div>
+                  <div className="ee-hr"></div>
                 </div>
+
                 <div className="ee-description">{item.description}</div>
               </div>
             </div>

@@ -7,6 +7,7 @@ import LoadingState from "./components/states/loadingState/LoadingState";
 import landingPageData from "./data/landingPageData";
 import projectPageData from "./data/projectPageData";
 import contactPageData from "./data/contactPageData";
+import Home from "./components/pages/homePage/Home";
 
 const LandingPage = lazy(
   () => import("./components/pages/landingPage/LandingPage")
@@ -33,15 +34,27 @@ const router = createBrowserRouter([
         path: "",
         element: (
           <Suspense fallback={<LoadingState />}>
-            <LandingPage {...landingPageData} />
+            <Home />
+            <ContactMe {...contactPageData} />
           </Suspense>
         ),
       },
+      {
+        path: "/about",
+        element: (
+          <Suspense fallback={<LoadingState />}>
+            <LandingPage {...landingPageData} />
+            <ContactMe {...contactPageData} />
+          </Suspense>
+        ),
+      },
+
       {
         path: "/Project",
         element: (
           <Suspense fallback={<LoadingState />}>
             <ProjectPage {...projectPageData} />
+            <ContactMe {...contactPageData} />
           </Suspense>
         ),
       },

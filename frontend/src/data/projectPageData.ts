@@ -24,6 +24,12 @@ const projectPageData = {
       desc: "Over A Four-Year Program, I Earned Certification As A Top-Ranking Student, Successfully Completing A Rigorous Curriculum Of 32 Subjects,",
     },
     {
+      id: 4,
+      title: "Vanilla Project bla",
+      used: "HTML, CSS, and JS",
+      desc: "Over Aleting A Rigorous Curriculum Of 32 Subjects,",
+    },
+    {
       id: 2,
       title: "React Project",
       used: "HTML, CSS, and Javascript",

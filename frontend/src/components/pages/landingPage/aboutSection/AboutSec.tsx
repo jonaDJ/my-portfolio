@@ -1,6 +1,6 @@
 import React from "react";
 import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
-import avatar from "../../../../assets/images/myAvatar.png";
+import avatar from "../../../../assets/images/my_avatar.png";
 import "../aboutSection/AboutSec.scss";
 import { AboutSectionProps } from "../../../../data/landingPageData";
 
@@ -12,9 +12,9 @@ const AboutSec: React.FC<AboutSectionProps> = ({ role, description }) => {
           <div className="about-me-header">
             <img
               src={avatar}
-              alt="Portrait of the author"
+              alt="Jon's avatar"
               className="about-me-avatar"
-              aria-label="Portrait of the author"
+              aria-label="Jon's avatar"
             />
             <h2 className="my-role">{role}</h2>
           </div>
