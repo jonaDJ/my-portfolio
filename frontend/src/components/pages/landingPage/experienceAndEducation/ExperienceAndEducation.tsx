@@ -1,7 +1,7 @@
 import React from "react";
 import "../experienceAndEducation/ExperienceAndEducation.scss";
 import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
-import { ExperienceAndEducationProps } from "../../../../data/landingPageData";
+import { ExperienceAndEducationProps } from "../landingPageData";
 
 const ExperienceEducation: React.FC<ExperienceAndEducationProps> = (eeData) => (
   <section className="ee-container">

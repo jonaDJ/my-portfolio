@@ -2,7 +2,7 @@ import React from "react";
 import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
 import avatar from "../../../../assets/images/my_avatar.png";
 import "../aboutSection/AboutSec.scss";
-import { AboutSectionProps } from "../../../../data/landingPageData";
+import { AboutSectionProps } from "../landingPageData";
 
 const AboutSec: React.FC<AboutSectionProps> = ({ role, description }) => {
   return (

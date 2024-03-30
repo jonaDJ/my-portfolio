@@ -1,6 +1,6 @@
 import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
 import "./Certificates.scss";
-import { CertificateProps } from "../../../../data/landingPageData";
+import { CertificateProps } from "../landingPageData";
 
 const Certificates: React.FC<{ certifcatesData: CertificateProps[] }> = ({
   certifcatesData,

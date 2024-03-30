@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import WrapperComponent from "../wrapperComponent/WrapperComponent";
-import gitIcon from "../../assets/icon/git-icon.svg";
-import linkedInIcon from "../../assets/icon/linkedIn-icon.svg";
-import wpIcon from "../../assets/icon/wordpress.svg";
 import "./Header.scss";
+import { IconDataContext } from "../../context/IconDataContext";
 
 interface HeaderProps {
   name: string;
@@ -48,6 +46,9 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
     { to: "/about", text: "ABOUT" },
   ];
 
+  const { iconsData } = useContext(IconDataContext);
+  const filteredIconData = iconsData.filter((item) => !item.contact);
+
   return (
     <header className={`app-header ${isOpenNav ? "nav-open" : ""}`}>
       <WrapperComponent>
@@ -61,15 +62,15 @@ const Header: React.FC<HeaderProps> = ({ name }) => {
                   <div className={`burger ${isOpenNav ? "active" : ""}`}></div>
                 </button>
 
-                <a href="https://github.com">
-                  <img src={gitIcon} alt="git" />
-                </a>
-                <a href="https://linkedin.com">
-                  <img src={linkedInIcon} alt="linkedIn" />
-                </a>
-                <a href="https://linkedin.com">
-                  <img src={wpIcon} alt="email" />
-                </a>
+                {filteredIconData &&
+                  filteredIconData.map((icon) => (
+                    <a href={icon.link} key={icon._id}>
+                      <img
+                        src={require(`../../assets/icon/${icon.iconSrc}.svg`)}
+                        alt={icon.type}
+                      />
+                    </a>
+                  ))}
               </div>
             </div>
 

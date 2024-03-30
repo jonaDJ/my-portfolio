@@ -4,10 +4,9 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import LoadingState from "./components/states/loadingState/LoadingState";
-import landingPageData from "./data/landingPageData";
-import projectPageData from "./data/projectPageData";
-import contactPageData from "./data/contactPageData";
 import Home from "./components/pages/homePage/Home";
+import IconDataContextProvider from "./context/IconDataContext";
+import ContactMe from "./components/pages/contactMe/ContactMe";
 
 const LandingPage = lazy(
   () => import("./components/pages/landingPage/LandingPage")
@@ -15,7 +14,6 @@ const LandingPage = lazy(
 const ProjectPage = lazy(
   () => import("./components/pages/projects/ProjectPage")
 );
-const ContactMe = lazy(() => import("./components/pages/contactMe/ContactMe"));
 
 const router = createBrowserRouter([
   {
@@ -35,7 +33,6 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingState />}>
             <Home />
-            <ContactMe {...contactPageData} />
           </Suspense>
         ),
       },
@@ -43,8 +40,7 @@ const router = createBrowserRouter([
         path: "/about",
         element: (
           <Suspense fallback={<LoadingState />}>
-            <LandingPage {...landingPageData} />
-            <ContactMe {...contactPageData} />
+            <LandingPage />
           </Suspense>
         ),
       },
@@ -53,8 +49,7 @@ const router = createBrowserRouter([
         path: "/Project",
         element: (
           <Suspense fallback={<LoadingState />}>
-            <ProjectPage {...projectPageData} />
-            <ContactMe {...contactPageData} />
+            <ProjectPage />
           </Suspense>
         ),
       },
@@ -62,7 +57,7 @@ const router = createBrowserRouter([
         path: "/Contact",
         element: (
           <Suspense fallback={<LoadingState />}>
-            <ContactMe {...contactPageData} />
+            <ContactMe />
           </Suspense>
         ),
       },
@@ -70,8 +65,12 @@ const router = createBrowserRouter([
   },
 ]);
 
-function App() {
-  return <RouterProvider router={router} />;
-}
+const App = () => {
+  return (
+    <IconDataContextProvider>
+      <RouterProvider router={router} />
+    </IconDataContextProvider>
+  );
+};
 
 export default App;

@@ -1,5 +1,5 @@
 import React from "react";
-import { SkillsDataProps } from "../../../../data/landingPageData";
+import { SkillsDataProps } from "../landingPageData";
 import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
 import "./Skills.scss";
 
@@ -14,8 +14,8 @@ const Skills: React.FC<{ skillsData: SkillsDataProps[] }> = ({
             SKILLS
           </h2>
           <div className="skills-content">
-            {skillsData.map((skill) => (
-              <a href="/">
+            {skillsData.map((skill, index) => (
+              <a href="/" key={index}>
                 <img src={skill.logo} alt={skill.name} />
               </a>
             ))}

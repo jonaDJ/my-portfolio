@@ -1,9 +1,8 @@
 @import "../../../assets/styles/color";
 @import "../../../assets/styles/mixins";
+@import "../../../assets/styles/fonts";
 
 .contact-page {
-  //   background-color: black;
-  //   color: $pale-linen;
   padding: 5rem 0;
 }
 
@@ -13,12 +12,15 @@
   flex-direction: column;
   gap: 50px;
 }
+
 .contact-page-title {
   text-align: center;
 }
+
 .contact-container {
   display: flex;
 }
+
 .contact-about-me {
   display: flex;
   flex-direction: column;
@@ -61,16 +63,39 @@
     }
   }
 }
+
 .contact-resume {
   display: flex;
-  padding: 10px;
-  justify-content: flex-end;
+  width: 40%;
+  padding: 0.6rem;
+  height: 2.5rem;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 0.5rem;
   background-color: $deep-teal;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:after {
+    content: "";
+    background: $midnight-black;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+
+    clip-path: circle(0% at 50% 50%);
+    transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 0.8s;
+    z-index: -1;
+  }
 
   &:hover {
+    &:after {
+      clip-path: circle(100% at 50% 50%);
+      transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 2s;
+    }
     background-color: $steel-blue;
   }
 
@@ -94,7 +119,6 @@
   flex: 1;
   border: 1px solid;
   padding: 20px 0;
-
   width: 100%;
   form {
     display: flex;
@@ -159,18 +183,51 @@
 }
 
 .contact-submit-btn {
-  text-align: center;
-  padding: 10px;
   width: 60%;
   background-color: $deep-teal;
   color: $pale-linen;
-  font-size: 16px;
+
+  font-size: map-get(map-get($font-sizes, desktop), body);
   font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
+
   cursor: pointer;
+  padding: 0.5rem;
+  border: none;
+
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:after {
+    content: "";
+    background: $midnight-black;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+
+    clip-path: circle(0% at 50% 50%);
+    transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 0.8s;
+    z-index: -1;
+  }
 
   &:hover {
-    background-color: $steel-blue;
+    &:after {
+      clip-path: circle(100% at 50% 50%);
+      transition: all cubic-bezier(0, 0.96, 0.58, 1.1) 2s;
+    }
+
+    color: $deep-teal;
   }
+}
+
+.submitted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 @include breakpoint-tablet {
