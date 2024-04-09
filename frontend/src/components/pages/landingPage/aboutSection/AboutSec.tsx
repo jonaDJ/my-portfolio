@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
 import avatar from "../../../../assets/images/my_avatar.png";
 import "../aboutSection/AboutSec.scss";
-import { AboutSectionProps } from "../landingPageData";
+import { IconDataContext } from "../../../../context/IconDataContext";
 
-const AboutSec: React.FC<AboutSectionProps> = ({ role, description }) => {
+const AboutSec: React.FC = () => {
+  const { mainData } = useContext(IconDataContext);
+  const { role, description } = mainData.aboutHeader;
   return (
     <div className="about-me-main">
       <WrapperComponent>

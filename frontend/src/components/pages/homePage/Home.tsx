@@ -15,7 +15,9 @@ const Home: React.FC = () => {
     navigate("/about");
   };
 
-  const { homeData } = useContext(IconDataContext);
+  const iconDataContext = useContext(IconDataContext);
+
+  const { greeting, title, welcome } = iconDataContext.mainData.homeHeader;
 
   return (
     <section className="calltoaction-section">
@@ -29,13 +31,13 @@ const Home: React.FC = () => {
               aria-label="Jon's avatar"
             />
             <h1 className="calltoaction-title">
-              {homeData.greeting}
+              {greeting}
               <br />
-              {homeData.title}
+              {title}
             </h1>
           </div>
           <h2 className="calltoaction-desc">
-            <span>{homeData.welcome}</span>
+            <span>{welcome}</span>
             <button
               className="calltoaction-button"
               onClick={(e) => learnMoreHandler(e)}

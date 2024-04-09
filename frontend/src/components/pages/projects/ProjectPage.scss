@@ -3,7 +3,7 @@
 @import "../../../assets/styles/mixins";
 
 .project-section {
-  background-color: $dark;
+  background-color: $midnight-black;
   padding: 3rem 0;
 }
 
@@ -34,16 +34,17 @@
 }
 
 .project-card {
-  padding: 0rem 1rem 1rem 0;
+  // padding: 0rem 1rem 1rem 0;
   display: grid;
   align-items: start;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 0.5rem;
+  grid-template-columns: 4fr 5fr;
+  column-gap: 1rem;
   border-top: 1px solid $pale-linen;
   color: $pale-linen;
 }
 
 .project-card img {
+  margin: 0.3rem;
   flex: 0 50%;
   max-width: 100%;
 }
@@ -51,21 +52,23 @@
 .project-card-header {
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 
 .project-card-title-header {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  h2 {
+  h2 a {
+    text-decoration: none;
+    color: $pale-linen;
     font-weight: 400;
     font-size: map-get(map-get($font-sizes, desktop), h3);
   }
 }
 
 .project-card-line {
-  width: 30%;
+  width: 100%;
   margin-left: 0;
 }
 
@@ -125,13 +128,13 @@
   }
 
   .project-card-header {
-    padding: 0.6rem;
-
     h2 {
+      padding: 0 0.6rem;
       font-size: map-get(map-get($font-sizes, mobile), h3);
     }
 
     p {
+      padding: 0 0.6rem;
       font-size: map-get(map-get($font-sizes, mobile), subtext);
     }
   }
@@ -143,6 +146,7 @@
   .project-card {
     grid-template-columns: 1fr;
     padding: 0;
+    border-left: 0.5px solid white;
   }
 }
 
@@ -167,23 +171,24 @@
   .project-card {
     grid-template-columns: 1fr;
     padding: 0;
+    border-left: 0.5px solid white;
   }
 
   .project-card-header {
-    padding: 0.6rem;
-
     h2 {
+      padding: 0 0.6rem;
       font-size: map-get(map-get($font-sizes, tablet), h3);
     }
 
     p {
+      padding: 0 0.6rem;
       font-size: map-get(map-get($font-sizes, tablet), subtext);
     }
   }
 }
 
-@include breakpoint-laptop {
-  .project-card {
-    grid-template-columns: 7fr 5fr;
-  }
-}
+// @include breakpoint-laptop {
+//   .project-card {
+//     grid-template-columns: 6fr 5fr;
+//   }
+// }

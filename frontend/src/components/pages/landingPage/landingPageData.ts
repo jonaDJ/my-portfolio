@@ -1,36 +1,30 @@
-export interface AboutSectionProps {
-  role: string;
-  description: string[];
-}
-
-export interface ExperienceAndEducationProps {
-  items: ExperienceAndEducationItemProps[];
-}
-
-export interface ExperienceAndEducationItemProps {
-  id: string;
+export interface exAndEdProps {
+  _id: string;
   type: string;
-  title?: string;
-  dates: string;
+  title?: string; // Fields for experience
+  company?: string; // Fields for experience
   location: string;
+  dates: string;
   description: string;
-  degree?: string;
+  // Additional fields specific to education
+  degree?: string; // Education-specific field
+  institution?: string; // Education-specific field
 }
 
 export interface CertificateProps {
-  id: number;
+  _id: number | string;
   title: string;
   url: string;
 }
 
 export interface SkillsDataProps {
+  _id: number | string;
   name: string;
   logo: string;
 }
 
 export interface LandingPageProps {
-  aboutSectionData: AboutSectionProps;
-  experienceAndEducationData: ExperienceAndEducationProps;
-  skillsData: SkillsDataProps[];
-  certificatesData: CertificateProps[];
+  exAndEd: exAndEdProps[];
+  skills: SkillsDataProps[];
+  certificates: CertificateProps[];
 }

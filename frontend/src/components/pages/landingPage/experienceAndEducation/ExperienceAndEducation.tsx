@@ -1,9 +1,11 @@
 import React from "react";
 import "../experienceAndEducation/ExperienceAndEducation.scss";
 import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
-import { ExperienceAndEducationProps } from "../landingPageData";
+import { exAndEdProps } from "../landingPageData";
 
-const ExperienceEducation: React.FC<ExperienceAndEducationProps> = (eeData) => (
+const ExperienceEducation: React.FC<{ eeData: exAndEdProps[] }> = ({
+  eeData,
+}) => (
   <section className="ee-container">
     <WrapperComponent>
       <div className="ee-section">
@@ -12,8 +14,8 @@ const ExperienceEducation: React.FC<ExperienceAndEducationProps> = (eeData) => (
           <h3 className="ee-title ee-title-mobile">Education</h3>
         </div>
         <div className="ee-details">
-          {eeData.items.map((item) => (
-            <div key={item.id} className={`ee-entry-outer ${item.type}`}>
+          {eeData.map((item) => (
+            <div key={item._id} className={`ee-entry-outer ${item.type}`}>
               <div
                 className={`ee-entry-inner ${
                   item.degree ? "ee-entry-inner-edu" : "ee-entry-inner-ex"
@@ -23,18 +25,17 @@ const ExperienceEducation: React.FC<ExperienceAndEducationProps> = (eeData) => (
                   <div className="ee-job-title">
                     {item.degree || item.title}
                   </div>
-                  <div
-                    className="ee-job-details"
-                    aria-label="Job details"
-                  >{`${item.dates}, ${item.location}`}</div>
+                  <div className="ee-job-details" aria-label="Job details">
+                    {item.location} | {item?.institution ?? item?.company}
+                  </div>
                   <div className="ee-hr"></div>
                 </div>
 
                 <div className="ee-description">{item.description}</div>
               </div>
+              <div className="ee-entry-inner ee-dates">{item.dates}</div>
             </div>
           ))}
-
           <div className="ee-titles">
             <h3 className="ee-title ee-title-separate">Education</h3>
           </div>

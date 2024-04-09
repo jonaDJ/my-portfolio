@@ -9,42 +9,67 @@ interface IconData {
 }
 
 interface HomeData {
+  _id: string;
   greeting: string;
   title: string;
   welcome: string;
 }
 
-interface IconDataContextType {
-  iconsData: IconData[];
-  homeData: HomeData;
+interface ProjectData {
+  title: string;
+  desc: string;
 }
 
-export const IconDataContext = createContext<IconDataContextType>({
+interface AboutData {
+  role: string;
+  description: string[];
+}
+
+interface MainData {
+  _id: string;
+  homeHeader: HomeData;
+  projectHeader: ProjectData;
+  aboutHeader: AboutData;
+}
+
+interface IconDataContextType {
+  iconsData: IconData[];
+  mainData: MainData;
+}
+
+const initialData: IconDataContextType = {
   iconsData: [],
-  homeData: { greeting: "", title: "", welcome: "" },
-});
+  mainData: {
+    _id: "",
+    homeHeader: { _id: "", greeting: "", title: "", welcome: "" },
+    projectHeader: { title: "", desc: "" },
+    aboutHeader: { role: "", description: [] },
+  },
+};
+
+export const IconDataContext = createContext<IconDataContextType>(initialData);
 
 const IconDataContextProvider: React.FC<{ children: React.ReactNode }> = (
   props
 ) => {
-  const [apiData, setApiData] = useState<IconDataContextType>({
-    iconsData: [],
-    homeData: { greeting: "", title: "", welcome: "" },
-  });
+  const [apiData, setApiData] = useState<IconDataContextType>(initialData);
 
   const fetchData = async () => {
     try {
       const iconsResponse = await fetch("/api/icons");
-      const homeResponse = await fetch("/api/home");
+      const mainResponse = await fetch("/api/home");
 
-      if (!iconsResponse.ok || !homeResponse.ok) {
+      if (!iconsResponse.ok || !mainResponse.ok) {
         throw new Error("Network response was not ok");
       }
 
-      const iconsData = await iconsResponse.json();
-      const homeData = await homeResponse.json();
+      const iconsData: IconData[] = await iconsResponse.json();
+      const mainData: MainData = await mainResponse.json();
 
-      setApiData({ iconsData: iconsData, homeData: homeData });
+      setApiData({
+        iconsData: iconsData,
+        mainData: mainData,
+      });
     } catch (error) {
       console.log(error);
     }

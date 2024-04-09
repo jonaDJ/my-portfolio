@@ -3,9 +3,7 @@ import { SkillsDataProps } from "../landingPageData";
 import WrapperComponent from "../../../wrapperComponent/WrapperComponent";
 import "./Skills.scss";
 
-const Skills: React.FC<{ skillsData: SkillsDataProps[] }> = ({
-  skillsData,
-}) => {
+const Skills: React.FC<{ skills: SkillsDataProps[] }> = ({ skills }) => {
   return (
     <section className="skills-section" aria-labelledby="skills-section-title">
       <WrapperComponent>
@@ -14,7 +12,7 @@ const Skills: React.FC<{ skillsData: SkillsDataProps[] }> = ({
             SKILLS
           </h2>
           <div className="skills-content">
-            {skillsData.map((skill, index) => (
+            {skills.map((skill, index) => (
               <a href="/" key={index}>
                 <img src={skill.logo} alt={skill.name} />
               </a>

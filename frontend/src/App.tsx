@@ -44,7 +44,6 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-
       {
         path: "/Project",
         element: (

@@ -7,15 +7,9 @@ import { useEffect, useState } from "react";
 
 const LandingPage: React.FC = () => {
   const initialData: LandingPageProps = {
-    aboutSectionData: {
-      role: "",
-      description: [],
-    },
-    experienceAndEducationData: {
-      items: [],
-    },
-    skillsData: [],
-    certificatesData: [],
+    exAndEd: [],
+    skills: [],
+    certificates: [],
   };
 
   const [data, setData] = useState<LandingPageProps>(initialData);
@@ -38,19 +32,15 @@ const LandingPage: React.FC = () => {
     fetchData();
   }, []);
 
-  const {
-    aboutSectionData,
-    skillsData,
-    certificatesData,
-    experienceAndEducationData,
-  } = data;
+  const { skills, certificates, exAndEd } = data;
+  console.log(exAndEd);
 
   return (
     <div>
-      <AboutSec {...aboutSectionData} />
-      <ExperienceEducation {...experienceAndEducationData} />
-      <Skills skillsData={skillsData} />
-      <Certificates certifcatesData={certificatesData} />
+      <AboutSec />
+      <ExperienceEducation eeData={exAndEd} />
+      <Skills skills={skills} />
+      <Certificates certificates={certificates} />
     </div>
   );
 };
