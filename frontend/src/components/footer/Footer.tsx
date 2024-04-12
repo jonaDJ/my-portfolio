@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           <div className="footer-container">
             {iconsData &&
               iconsData.map((icon) => (
-                <a href={icon.link} key={icon._id}>
+                <a href={icon.link} key={icon._id} className="footer-icon">
                   <img
                     src={require(`../../assets/icon/${icon.iconSrc}.svg`)}
                     alt={icon.type}

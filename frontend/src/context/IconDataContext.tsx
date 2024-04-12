@@ -6,6 +6,7 @@ interface IconData {
   iconSrc: string;
   link: string;
   contact: boolean;
+  details: string;
 }
 
 interface HomeData {
@@ -25,11 +26,19 @@ interface AboutData {
   description: string[];
 }
 
+interface ContactProps {
+  pdf: string;
+  desc: string;
+  thankyouHeader: string;
+  thankyouDesc: string;
+}
+
 interface MainData {
   _id: string;
   homeHeader: HomeData;
   projectHeader: ProjectData;
   aboutHeader: AboutData;
+  contactDetails: ContactProps;
 }
 
 interface IconDataContextType {
@@ -44,6 +53,7 @@ const initialData: IconDataContextType = {
     homeHeader: { _id: "", greeting: "", title: "", welcome: "" },
     projectHeader: { title: "", desc: "" },
     aboutHeader: { role: "", description: [] },
+    contactDetails: { pdf: "", desc: "", thankyouHeader: "", thankyouDesc: "" },
   },
 };
 

@@ -49,12 +49,16 @@
   li {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
 
     img {
       padding: 2px;
-      background-color: black;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale(1.3);
     }
 
     h4 {
@@ -172,6 +176,12 @@
       width: 100%;
     }
   }
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 0.2em;
 }
 
 .contact-input-msg {

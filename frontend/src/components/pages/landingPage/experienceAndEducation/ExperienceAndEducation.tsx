@@ -26,17 +26,21 @@ const ExperienceEducation: React.FC<{ eeData: exAndEdProps[] }> = ({
                     {item.degree || item.title}
                   </div>
                   <div className="ee-job-details" aria-label="Job details">
-                    {item.location} | {item?.institution ?? item?.company}
+                    <span>
+                      {item.location} | {item?.institution ?? item?.company}
+                    </span>
                   </div>
                   <div className="ee-hr"></div>
                 </div>
 
                 <div className="ee-description">{item.description}</div>
               </div>
-              <div className="ee-entry-inner ee-dates">{item.dates}</div>
+              <div className="ee-entry-inner ee-dates">
+                <span>{item.dates}</span>
+              </div>
             </div>
           ))}
-          <div className="ee-titles">
+          <div className="ee-titles ee-titles-education">
             <h3 className="ee-title ee-title-separate">Education</h3>
           </div>
         </div>

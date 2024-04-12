@@ -6,6 +6,7 @@ const iconSchema = new mongoose.Schema({
   iconSrc: String,
   link: String,
   contact: Boolean,
+  details: String,
 });
 
 const IconData = mongoose.model("icon-data", iconSchema);

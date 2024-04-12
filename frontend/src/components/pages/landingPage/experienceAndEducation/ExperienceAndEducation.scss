@@ -6,6 +6,10 @@
   margin: 3rem 0;
 }
 
+.ee-titles-education {
+  padding-top: 2rem;
+}
+
 .ee-section {
   display: flex;
   flex-direction: column;
@@ -57,6 +61,12 @@
     .ee-entry-inner.ee-dates {
       align-items: flex-end;
     }
+  }
+}
+
+.ee-entry-inner.ee-dates {
+  span {
+    padding: 0 0.5rem;
   }
 }
 
@@ -151,7 +161,7 @@
 }
 
 .ee-hr {
-  background-color: black;
+  background-color: $dark;
   width: 30%;
   height: 1px;
 }

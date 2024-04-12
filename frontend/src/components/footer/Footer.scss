@@ -2,13 +2,22 @@
 .footer-section {
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 0.5rem;
   background-color: $midnight-black;
 }
 
 .footer-container {
   display: flex;
-  padding: 13px 16px;
+  padding: 0.3rem 1rem;
   justify-content: center;
-  gap: 25px;
+  gap: 1rem;
+}
+
+.footer-container a {
+  padding: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer-container a:hover {
+  transform: scale(1.3);
 }

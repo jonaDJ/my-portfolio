@@ -33,7 +33,6 @@ const LandingPage: React.FC = () => {
   }, []);
 
   const { skills, certificates, exAndEd } = data;
-  console.log(exAndEd);
 
   return (
     <div>
